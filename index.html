@@ -1,148 +1,184 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulário • PAGODE DO CARA</title>
+<title>Formulário • PAGODE DO CARA Ultra PRO</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 /* Reset */
-* { margin:0; padding:0; box-sizing: border-box; }
-body, html { height: 100%; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
 
 /* Fundo com overlay */
 body {
-    background: url('https://drive.google.com/uc?export=view&id=1Ac90JQcjCRISMN130Vk7clV7NBkMGIuc') no-repeat center center fixed;
-    background-size: cover;
+  background: url('https://drive.google.com/uc?export=view&id=13VdQJKM17aV0bdMsOYLPg1Ccc5HD2VeC') no-repeat center center fixed;
+  background-size: cover;
 }
 .overlay {
-    position: fixed;
-    top:0; left:0; width:100%; height:100%;
-    background: rgba(0,0,0,0.65);
-    z-index: 1;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
 }
 
 /* Partículas discretas */
 .particles {
-    position: fixed;
-    top:0; left:0; width:100%; height:100%;
-    pointer-events: none;
-    z-index: 2;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events: none;
+  z-index: 2;
 }
 .particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #ffd700;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: float 8s linear infinite;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 8s linear infinite;
 }
 @keyframes float {
-    0% { transform: translateY(100vh) translateX(0); opacity:0.7; }
-    100% { transform: translateY(-10vh) translateX(30px); opacity:0; }
+  0% { transform: translateY(100vh) translateX(0); opacity:0.7; }
+  100% { transform: translateY(-10vh) translateX(30px); opacity:0; }
 }
 
-/* Container do formulário */
+/* Container */
 .container {
-    position: relative;
-    z-index: 3;
-    background: rgba(0,0,0,0.05);
-    backdrop-filter: blur(15px);
-    padding: 40px 30px;
-    border-radius: 25px;
-    max-width: 650px;
-    width: 90%;
-    box-shadow: 0 0 40px rgba(255,215,0,0.6);
-    color: #fff;
-    animation: fadeIn 1.2s ease forwards;
+  position: relative;
+  z-index: 3;
+  background: rgba(0,0,0,0.05);
+  backdrop-filter: blur(15px);
+  padding: 40px 30px;
+  border-radius: 25px;
+  max-width: 650px;
+  width: 90%;
+  box-shadow: 0 0 40px rgba(255,215,0,0.6);
+  color: #fff;
 }
 
 /* Logo e título */
 .logo {
-    display: block;
-    margin: 0 auto 20px auto;
-    max-width: 180px;
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 180px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: #ffd700;
-    margin-bottom: 25px;
+  text-align: center;
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 25px;
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+  animation-delay: 0.3s;
 }
 
-/* Labels e inputs */
+/* Labels e inputs com animação individual */
 label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #ffd700;
-    font-size: 1rem;
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
 }
 input, textarea, select {
-    width: 100%;
-    padding: 14px;
-    margin-top: 5px;
-    border-radius: 12px;
-    border: none;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    font-size: 16px;
-    transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 16px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
 }
 input:focus, textarea:focus, select:focus {
-    outline: none;
-    transform: scale(1.02);
-    box-shadow: 0 0 15px #ffd700;
+  outline: none;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #ffd700;
 }
 textarea { resize: vertical; height: 130px; }
 
-/* Botão enviar */
+/* Botão enviar com microinteração */
 button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 16px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    background: #ffd700;
-    color: #111;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+  margin-top: 25px;
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: #ffd700;
+  color: #111;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
 }
 button:hover {
-    background: #e6c200;
-    transform: scale(1.05);
+  background: #e6c200;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffd700;
 }
 
 /* Botão WhatsApp */
 .whatsapp-btn {
-    display: block;
-    margin: 25px auto 0 auto;
-    text-align: center;
-    background: #25D366;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 16px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    animation: pulse 2s infinite;
+  display: block;
+  margin: 25px auto 0 auto;
+  text-align: center;
+  background: #25D366;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  animation: pulse 2s infinite;
 }
-.whatsapp-btn:hover { background: #1ebe5d; }
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
 
 /* Animações */
-@keyframes fadeIn { from {opacity:0} to {opacity:1} }
-@keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(37,211,102,0.7);} 70% {box-shadow: 0 0 20px 10px rgba(37,211,102,0);} 100% {box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7);}
+  70% { box-shadow: 0 0 20px 10px rgba(37,211,102,0);}
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0);}
+}
 
 @media(max-width:768px){
-    .container { padding: 30px 20px; }
-    h1 { font-size: 1.8rem; }
+  .container { padding: 30px 20px; }
+  h1 { font-size: 1.8rem; }
 }
 </style>
 </head>
@@ -152,63 +188,64 @@ button:hover {
 <div class="particles" id="particles"></div>
 
 <div class="container">
-    <!-- Logo -->
-    <img class="logo" src="https://via.placeholder.com/180x60?text=Logo+Pagode+do+Cara" alt="Logo PAGODE DO CARA">
-    <h1>Formulário de Contato</h1>
+  <!-- Logo placeholder -->
+  <img class="logo" src="https://via.placeholder.com/180x60?text=Logo+Pagode+do+Cara" alt="Logo PAGODE DO CARA">
+  <h1>Formulário de Contato</h1>
 
-    <form action="https://formspree.io/f/mwkawqny" method="POST">
-        <label>Nome completo</label>
-        <input type="text" name="nome" required>
+  <form action="https://formspree.io/f/mwkawqny" method="POST">
+    <label style="animation-delay:0.2s;">Nome completo</label>
+    <input type="text" name="nome" required style="animation-delay:0.4s;">
 
-        <label>E-mail</label>
-        <input type="email" name="email" required>
+    <label style="animation-delay:0.6s;">E-mail</label>
+    <input type="email" name="email" required style="animation-delay:0.8s;">
 
-        <label>Telefone / WhatsApp</label>
-        <input type="text" name="telefone" required>
+    <label style="animation-delay:1s;">Telefone / WhatsApp</label>
+    <input type="text" name="telefone" required style="animation-delay:1.2s;">
 
-        <label>Tipo de solicitação</label>
-        <select name="tipo_evento">
-            <option>Contratação de Show</option>
-            <option>Evento Privado</option>
-            <option>Aniversário</option>
-            <option>Casamento</option>
-            <option>Parceria / Publicidade</option>
-            <option>Orçamento geral</option>
-            <option>Outro</option>
-        </select>
+    <label style="animation-delay:1.4s;">Tipo de solicitação</label>
+    <select name="tipo_evento" style="animation-delay:1.6s;">
+      <option>Contratação de Show</option>
+      <option>Evento Privado</option>
+      <option>Aniversário</option>
+      <option>Casamento</option>
+      <option>Parceria / Publicidade</option>
+      <option>Orçamento geral</option>
+      <option>Outro</option>
+    </select>
 
-        <label>Mensagem</label>
-        <textarea name="mensagem" placeholder="Conte os detalhes da solicitação"></textarea>
+    <label style="animation-delay:1.8s;">Mensagem</label>
+    <textarea name="mensagem" placeholder="Conte os detalhes da solicitação" style="animation-delay:2s;"></textarea>
 
-        <label>
-            <input type="checkbox" name="permitir_contato" value="sim" required>
-            Autorizo contato para retorno desta solicitação
-        </label>
+    <label style="animation-delay:2.2s;">
+      <input type="checkbox" name="permitir_contato" value="sim" required>
+      Autorizo contato para retorno desta solicitação
+    </label>
 
-        <!-- Dados ocultos -->
-        <input type="hidden" name="origem_formulario" value="Formulario Pagode do Cara - Ultimate PRO">
-        <input type="hidden" name="canal_entrada" value="Site Oficial">
-        <input type="hidden" name="versao_form" value="PRO 5.0">
+    <!-- Dados ocultos -->
+    <input type="hidden" name="origem_formulario" value="Formulario Pagode do Cara - Ultra PRO">
+    <input type="hidden" name="canal_entrada" value="Site Oficial">
+    <input type="hidden" name="versao_form" value="Ultra PRO 1.0">
 
-        <button type="submit">Enviar</button>
-    </form>
+    <button type="submit" style="animation-delay:2.4s;">Enviar</button>
+  </form>
 
-    <a class="whatsapp-btn" href="https://wa.me/5521980737063?text=Olá!%20Acabei%20de%20enviar%20uma%20solicitação%20pelo%20formulário" target="_blank">
-        Falar com Wagner Zaparolli no WhatsApp
-    </a>
+  <a class="whatsapp-btn" href="https://wa.me/5521980737063?text=Olá!%20Acabei%20de%20enviar%20uma%20solicitação%20pelo%20formulário" target="_blank">
+    Falar com Wagner Zaparolli no WhatsApp
+  </a>
 </div>
 
 <script>
 // Criar partículas
 const particleContainer = document.getElementById('particles');
-for(let i=0;i<50;i++){
-    let p = document.createElement('div');
-    p.className='particle';
-    p.style.left=Math.random()*100+'vw';
-    p.style.animationDelay=(Math.random()*10)+'s';
-    p.style.width=(2+Math.random()*3)+'px';
-    p.style.height=p.style.width;
-    particleContainer.appendChild(p);
+for (let i = 0; i < 50; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDelay = Math.random() * 10 + 's';
+  const size = 2 + Math.random() * 3;
+  p.style.width = size + 'px';
+  p.style.height = size + 'px';
+  particleContainer.appendChild(p);
 }
 </script>
 
