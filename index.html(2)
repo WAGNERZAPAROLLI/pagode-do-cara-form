@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artista - Nome do Cantor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    header {
+      background: #ff4d6d;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    section h2 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+    .bio, .contato, .galeria {
+      margin-bottom: 40px;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    .galeria img {
+      width: 100%;
+      max-width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px 0;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 10px 20px;
+      background: #ff4d6d;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nome do Cantor</h1>
+    <p>Sua tagline ou estilo musical aqui</p>
+  </header>
+
+  <nav>
+    <a href="#bio">Biografia</a>
+    <a href="#musica">Músicas</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="bio" class="bio">
+    <h2>Biografia</h2>
+    <p>Escreva aqui sua história, trajetória musical, inspirações e conquistas.</p>
+  </section>
+
+  <section id="musica">
+    <h2>Músicas</h2>
+    <p>Liste seus lançamentos, álbuns, singles ou links de streaming aqui.</p>
+  </section>
+
+  <section id="galeria" class="galeria">
+    <h2>Galeria</h2>
+    <div class="grid">
+      <img src="imagem1.jpg" alt="Foto do cantor">
+      <img src="imagem2.jpg" alt="Foto do cantor">
+      <img src="imagem3.jpg" alt="Foto do cantor">
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu email" required>
+      <textarea placeholder="Mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Nome do Cantor. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
